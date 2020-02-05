@@ -11,6 +11,13 @@ module.exports = {
         filename: 'app.js',
         publicPath: '/static/build/',
     },
+    devServer: {
+        port: 8080,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+     },
+     devtool: 'cheap-inline-module-source-map',
     module: {
         rules: [{
             test: /\.(js|jsx)$/,
@@ -28,7 +35,12 @@ module.exports = {
                     ]
                 ]
             }
-        }, ],
+        },
+        {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader',
+        },
+    ],
     },
     resolve: {
         modules: [`${__dirname}/static_src`, 'node_modules'],
