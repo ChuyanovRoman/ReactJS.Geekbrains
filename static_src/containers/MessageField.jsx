@@ -91,6 +91,6 @@ const mapStateToProps = ({ chatReducer, messageReducer  }) => ({
     isLoading: messageReducer.isLoading,
  });
  
- const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage, loadChats  }, dispatch);
+ const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage, loadMessages }, dispatch);
  
  export default connect(mapStateToProps, mapDispatchToProps)(MessageField);

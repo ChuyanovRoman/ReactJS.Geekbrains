@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import PushToggle from '../components/PushToggle';
 
 
 export default class Header extends React.Component {
@@ -14,6 +15,7 @@ export default class Header extends React.Component {
    render() {
        return (
            <div className="header">
+               <PushToggle />
                <span style={ { fontSize: '20px' } }>Чат { this.props.chatId }</span>
            </div>
        )
